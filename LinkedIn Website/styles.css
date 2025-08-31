@@ -118,11 +118,6 @@ h3{ font:700 var(--h3)/1.2 "Inter",sans-serif; margin:0 0 8px }
 .hero{ padding: calc(var(--sec-y) + 8px) 0; background: linear-gradient(180deg, rgba(241,245,249,.6), rgba(255,255,255,0)); border-bottom:1px solid var(--line) }
 .hero .cta-row{ display:flex; gap:12px; flex-wrap:wrap }
 .hero-media{ padding:0; border:none; box-shadow:none; background:transparent }
-.hero-media .profile-pic-overlay{ position:absolute; border-radius:50%; object-fit:cover; 
-  /* default placement for typical laptop-illustration composition */
-  top:12%; left:6%; width:min(16%, 84px); aspect-ratio:1/1; border:2px solid #fff; box-shadow: 0 6px 20px rgba(2,6,23,.18) }
-@media (max-width: 900px){ .hero-media .profile-pic-overlay{ top:14%; left:7%; width:min(18%, 76px) } }
-@media (max-width: 640px){ .hero-media .profile-pic-overlay{ top:16%; left:8%; width:min(22%, 68px) } }
 
 /* icon dot */
 .dot{ width:28px; height:28px; border-radius:50%; display:inline-grid; place-items:center; color:#ffffff; background: radial-gradient(60% 60% at 50% 30%, var(--accent-2), var(--accent)); box-shadow: 0 0 0 3px rgba(37,99,235,.16); font:700 14px/1 "Inter" }
