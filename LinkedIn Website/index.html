@@ -7,7 +7,7 @@
   <meta name="description" content="We ghostwrite daily LinkedIn posts in your voice, manage comments, and grow the right audience with a simple monthly plan.">
 
   <!-- Preload key assets -->
-  <link rel="preload" as="image" href="Assets/Rankzela logo.webp" type="image/webp">
+  <link rel="preload" as="image" href="Assets/rankzela-logo.webp" type="image/webp">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,8 +23,11 @@
   <header class="site-header">
     <div class="container nav">
       <a class="brand" href="#top" aria-label="Home">
-        <img src="Assets/Rankzela logo.webp" width="32" height="32" alt="Rankzela logo">
-        <span>Rankzela</span>
+        <picture>
+          <source srcset="Assets/rankzela-logo.webp" type="image/webp">
+          <img src="Assets/rankzela-logo.jpeg" width="32" height="32" alt="Rankzela logo" loading="eager">
+        </picture>
+        <span>PresencePro by Rankzela</span>
       </a>
       <nav class="site-nav" aria-label="Primary">
         <a href="#benefits">Benefits</a>
@@ -35,8 +38,16 @@
       </nav>
       
       <button class="nav-burger" id="navBurger" aria-label="Open menu" aria-controls="navDrawer" aria-expanded="false">
-        <i data-lucide="menu" class="i icon-menu" aria-hidden="true"></i>
-        <i data-lucide="x" class="i icon-close" aria-hidden="true"></i>
+        <!-- Inline icons to avoid any CDN issues -->
+        <svg class="i icon-menu" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+        <svg class="i icon-close" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
       </button>
     </div>
     <div id="navDrawer" class="nav-drawer" hidden>
@@ -53,7 +64,7 @@
     <!-- ===================== HERO ===================== -->
     <section id="top" class="hero wave-bg">
       <div class="container">
-        <div class="stack" style="margin-bottom:14px">
+        <div class="stack center" style="margin-bottom:14px">
           <span class="promo-badge"><i data-lucide="sparkles" class="i" aria-hidden="true"></i> First month free</span>
           <span class="badge">100% done for you</span>
         </div>
@@ -64,7 +75,7 @@
             <p class="lead">We turn your ideas into clear daily posts, keep replies human in the comments, and grow the audience that’s most likely to buy without you living on LinkedIn.</p>
 
             <div class="cta-row" style="margin-top:18px">
-              <a class="btn primary" href="https://calendly.com/dima-hodonovich22/30min">Book a free discovery call</a>
+              <a class="btn primary btn-anim" href="https://calendly.com/dima-hodonovich22/30min">Book a free discovery call</a>
               <a class="btn" href="#pricing">See pricing</a>
             </div>
 
@@ -209,7 +220,7 @@
             <div class="puck" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="2" x2="12" y2="22"></line><line x1="2" y1="12" x2="22" y2="12"></line></svg>
             </div>
-            <img class="bento-graphic" src="Assets/Impressions&amp;Reach.svg" alt="">
+            <img class="bento-graphic" src="Assets/impressions-reach.svg" alt="">
             <div class="bento-card__content">
               <h3>Impressions & Reach</h3>
               <p>How many people see your ideas and how that compounds.</p>
@@ -221,7 +232,7 @@
             <div class="puck" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a4 4 0 0 1-4 4H7l-4 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/></svg>
             </div>
-            <img class="bento-graphic" src="Assets/Comments&amp;Reactions.svg" alt="">
+            <img class="bento-graphic" src="Assets/comments-reactions.svg" alt="">
             <div class="bento-card__content">
               <h3>Comments & Reactions</h3>
               <p>Quality conversations and signals of genuine interest.</p>
@@ -304,7 +315,7 @@
 
           <div>
             <div class="pricing-card">
-              <span class="promo-badge" style="align-self:flex-start"><i data-lucide="sparkles" class="i" aria-hidden="true"></i> First month free</span>
+              <span class="promo-badge"><i class="i" aria-hidden="true" data-lucide="sparkles"></i> First month free</span>
               <div class="plan">Done for You LinkedIn Growth</div>
               <div class="price-xl">$2,500 <small>/month</small></div>
               <div class="sub">No long contracts · cancel anytime · no card required</div>
@@ -334,31 +345,31 @@
 
         <details>
           <summary>How do you match my voice?</summary>
-          <p>We build a tone map from your samples and a short interview, then test with a few posts before writing the full month.</p>
+          <div class="faq-content"><p>We build a tone map from your samples and a short interview, then test with a few posts before writing the full month.</p></div>
         </details>
         <details>
           <summary>Who replies to comments?</summary>
-          <p>We do in your voice and within agreed guardrails. We escalate anything sensitive.</p>
+          <div class="faq-content"><p>We do in your voice and within agreed guardrails. We escalate anything sensitive.</p></div>
         </details>
         <details>
           <summary>Do you handle carousels or articles?</summary>
-          <p>Yes. We’ll choose formats that best fit your goals and buyers.</p>
+          <div class="faq-content"><p>Yes. We’ll choose formats that best fit your goals and buyers.</p></div>
         </details>
         <details>
           <summary>How many revisions?</summary>
-          <p>Unlimited changes inside the monthly pack before scheduling. Post approval learnings roll forward.</p>
+          <div class="faq-content"><p>Unlimited changes inside the monthly pack before scheduling. Post approval learnings roll forward.</p></div>
         </details>
         <details>
           <summary>Do you manage DMs?</summary>
-          <p>We keep comment threads warm and can draft suggested DMs or a light protocol you approve.</p>
+          <div class="faq-content"><p>We keep comment threads warm and can draft suggested DMs or a light protocol you approve.</p></div>
         </details>
         <details>
           <summary>Can you guarantee leads?</summary>
-          <p>No, we guarantee consistent visibility, qualified engagement, and a compounding content engine.</p>
+          <div class="faq-content"><p>No, we guarantee consistent visibility, qualified engagement, and a compounding content engine.</p></div>
         </details>
         <details>
           <summary>Is any of this automated?</summary>
-          <p>No. Strategy, writing, and engagement are handled by real people.</p>
+          <div class="faq-content"><p>No. Strategy, writing, and engagement are handled by real people.</p></div>
         </details>
       </div>
     </section>

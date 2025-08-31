@@ -32,6 +32,51 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 })();
 
+// Icon fallback if Lucide fails to load
+(function ensureIcons(){
+  const nodes = document.querySelectorAll('[data-lucide]');
+  const hasLucide = !!(window.lucide && typeof window.lucide.createIcons === 'function');
+  if (hasLucide){
+    try { window.lucide.createIcons(); return; } catch(_){}
+  }
+  const createSVG = (name, cls='i') => {
+    const svgNS = 'http://www.w3.org/2000/svg';
+    const s = document.createElementNS(svgNS, 'svg');
+    s.setAttribute('viewBox','0 0 24 24');
+    s.setAttribute('fill','none');
+    s.setAttribute('stroke','currentColor');
+    s.setAttribute('stroke-width','2');
+    s.setAttribute('stroke-linecap','round');
+    s.setAttribute('stroke-linejoin','round');
+    s.setAttribute('class', cls);
+    const add = (tag, attrs) => { const el = document.createElementNS(svgNS, tag); Object.entries(attrs).forEach(([k,v])=>el.setAttribute(k,String(v))); s.appendChild(el); };
+    if (name === 'menu'){
+      add('line',{ x1:3, y1:6, x2:21, y2:6 });
+      add('line',{ x1:3, y1:12, x2:21, y2:12 });
+      add('line',{ x1:3, y1:18, x2:21, y2:18 });
+    } else if (name === 'x'){
+      add('line',{ x1:18, y1:6, x2:6, y2:18 });
+      add('line',{ x1:6, y1:6, x2:18, y2:18 });
+    } else if (name === 'sparkles'){
+      add('path',{ d:'M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5L18 18M6 18l2.5-2.5M15.5 8.5L18 6' });
+      add('circle',{ cx:12, cy:12, r:2 });
+    } else if (name === 'arrow-up'){
+      add('path',{ d:'M12 19V5' });
+      add('path',{ d:'M5 12l7-7 7 7' });
+    } else {
+      // generic fallback: circle
+      add('circle',{ cx:12, cy:12, r:9 });
+    }
+    return s;
+  };
+  nodes.forEach(node => {
+    const name = node.getAttribute('data-lucide') || '';
+    const cls = node.getAttribute('class') || 'i';
+    const svg = createSVG(name, cls);
+    node.replaceWith(svg);
+  });
+})();
+
 // Active link highlighting
 (function initActiveLinks(){
   const links = $$('.site-nav a');
@@ -147,3 +192,5 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 })();
+
+// FAQ animation handled via CSS max-height; JS not required

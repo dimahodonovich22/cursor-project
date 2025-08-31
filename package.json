@@ -1,0 +1,25 @@
+{
+  "name": "cursor-projects",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "playwright test",
+    "test:ui": "playwright test --ui",
+    "codegen": "playwright codegen"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dimahodonovich22/cursor-project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dimahodonovich22/cursor-project/issues"
+  },
+  "homepage": "https://github.com/dimahodonovich22/cursor-project#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.55.0"
+  }
+}

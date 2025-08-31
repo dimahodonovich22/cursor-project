@@ -92,11 +92,16 @@ h3{ font:700 var(--h3)/1.2 "Inter",sans-serif; margin:0 0 8px }
 .btn.primary:hover{ filter:brightness(1.05) }
 .btn.ghost{ background:transparent }
 
+/* Hero CTA: keep design, only stronger hover shadow */
+.btn-anim{ position:relative }
+.btn-anim:hover, .btn-anim:focus-visible{ box-shadow: 0 14px 34px rgba(37,99,235,.38) }
+
 /* header / nav */
 .site-header{ position:sticky; top:0; z-index:50; background:color-mix(in oklab, var(--bg) 86%, transparent); backdrop-filter: blur(10px); border-bottom:1px solid var(--line) }
 .nav{ display:flex; align-items:center; justify-content:space-between; height:64px; gap:12px }
 .brand{ display:flex; align-items:center; gap:10px; font:800 18px/1 "Manrope" }
-.brand img{ border-radius:8px }
+.brand picture{ display:inline-block }
+.brand img{ border-radius:8px; display:block }
 .site-nav{ display:flex; gap:18px; align-items:center }
 .site-nav a{ color:var(--muted); font:600 14px/1 "Inter" }
 .site-nav a.active{ color:var(--ink) }
@@ -127,6 +132,9 @@ details{ border:1px solid var(--line); border-radius:14px; padding:14px 16px; ba
 details+details{ margin-top:10px }
 summary{ cursor:pointer; font:700 18px/1.3 "Inter" }
 details p{ margin:8px 0 0; color:var(--muted); font-size:var(--small) }
+/* FAQ smooth open/close */
+.faq-content{ max-height:0; overflow:hidden; transition: max-height .3s ease }
+details[open] .faq-content{ max-height: 800px }
 
 /* inputs */
 label{ display:block }
@@ -250,7 +258,7 @@ input:focus, textarea:focus{ border-color: var(--accent); box-shadow: 0 0 0 3px 
 @media (max-width:900px){ .pricing-grid{ grid-template-columns:1fr } .pricing-card{ max-width:520px } }
 
 /* Make the promo badge stand out on the pricing card */
-.pricing-card .promo-badge{ background:#fff; color:#111827; border:1px solid rgba(2,6,23,.12); box-shadow: 0 10px 24px rgba(2,6,23,.18) }
+.pricing-card .promo-badge{ background:#fff; color:#111827; border:1px solid rgba(2,6,23,.12); box-shadow: 0 10px 24px rgba(2,6,23,.18); align-self:center; text-align:center }
 .pricing-card .promo-badge .i{ color: var(--accent) }
 
 /* Who this is for */
